@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{% static 'images/favicon_lock.ico' %}" />
+    <link rel="stylesheet" href="{% static 'styles/bank.css' %}" />
+    <title>Title</title>
+</head>
+<body>
+{% include 'bank/navbar.html' %}
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 """
-URL configuration for banks project.
+URL configuration for banks_prog project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -14,15 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.menu, name='menu'),
-    path('logout/', views.logout_user, name='login'),
-    path('register/', views.register_user, name='register'),
-    path('set-password/', views.set_password, name='set-password'),
-    path('view-password/', views.view_password, name='view-password'),
+    path('', views.bank, name='bank'),
+    # path('logout/', views.logout_user, name='login'),
+    # path('register/', views.register_user, name='register'),
+    # path('set-password/', views.set_password, name='set-password'),
+    # path('view-password/', views.view_password, name='view-password'),
 ]
