@@ -1,6 +1,21 @@
 .header{
     background-color: rgba(17, 17, 150, 0.784);
 }
+.container{
+    margin: 30px;
+    padding: 20px;
+    justify-content: space-between;
+    font-size: 30px;
+}
 img{
     width: 100px;
+}
+
+.password{
+    border: 1px solid black;
+    margin: 30px;
+    padding: 20px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    display: block;
 }
