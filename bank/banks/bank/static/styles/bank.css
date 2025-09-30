@@ -1,21 +1,48 @@
-.header{
-    background-color: rgba(17, 17, 150, 0.784);
+*{
+    background-color: black;
+    text-decoration: none;
+    box-sizing: border-box;
 }
+
+.header{
+    border: 1px solid #FFF;
+    display: flex;
+}
+
+nav{
+    display: flex;
+}
+
+
 .container{
     margin: 30px;
-    padding: 20px;
+    /* padding: 20px; */
     justify-content: space-between;
     font-size: 30px;
+    border: 1px solid #FFF;
+    width: 100px;
+    height: 100px;
 }
+
+.container a{
+    height: 100%;
+}
+
+a{
+    color: white;
+    font-size: 20px;
+    margin: 0px;
+    display: block;
+}
+
 img{
     width: 100px;
 }
 
 .password{
-    border: 1px solid black;
+    border: 1px solid #FFF;
     margin: 30px;
     padding: 20px;
     justify-content: space-between;
     box-sizing: border-box;
-    display: block;
 }
