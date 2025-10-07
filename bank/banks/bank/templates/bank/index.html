@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'bank/base.html' %}
 
-</body>
-</html>
+{% block content %}
+<!--<main class="home">-->
+<!--    <h1>BANK</h1>-->
+<!--    <div class="pas-list">-->
+<!--        <div class="password">-->
+<!--            <a href="">-->
+<!--                ПОЧТА-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="password">-->
+<!--            <a href="">-->
+<!--                STEAM-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="password">-->
+<!--            <a href="">-->
+<!--                РАБОЧИЙ ПРОФИЛЬ-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="row">
+      {% for password in passwords %}
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ password.title }}</h5>
+<!--        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+        <a href="{% url 'change-key' %}" class="btn btn-primary">РЕДАКТИРОВАТЬ КЛЮЧ</a>
+      </div>
+    </div>
+  </div>
+      {% endfor %}
+<!--  <div class="col-sm-6">-->
+<!--    <div class="card">-->
+<!--      <div class="card-body">-->
+<!--        <h5 class="card-title">КЛЮЧ 2</h5>-->
+<!--&lt;!&ndash;        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>&ndash;&gt;-->
+<!--        <a href="#" class="btn btn-primary">РЕДАКТИРОВАТЬ КЛЮЧ</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+
+
+</main>
+
+{% endblock %}

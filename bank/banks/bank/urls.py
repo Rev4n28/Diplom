@@ -20,7 +20,8 @@ from . import views
 
 urlpatterns = [
     path('', views.bank, name='bank'),
-    # path('logout/', views.logout_user, name='login'),
+    path('add-key/', views.add_key, name='add-key'),
+    path('change-key/', views.change_key, name='change-key'),
     # path('register/', views.register_user, name='register'),
     # path('set-password/', views.set_password, name='set-password'),
     # path('view-password/', views.view_password, name='view-password'),

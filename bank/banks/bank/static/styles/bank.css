@@ -1,7 +1,8 @@
 *{
-    background-color: black;
+    /* background-color: black; */
     text-decoration: none;
     box-sizing: border-box;
+    border: 1px solid black;
 }
 
 .header{
@@ -33,6 +34,7 @@ a{
     font-size: 20px;
     margin: 0px;
     display: block;
+    border: 0px;
 }
 
 img{
@@ -46,3 +48,8 @@ img{
     justify-content: space-between;
     box-sizing: border-box;
 }
+
+.btn-outline-secondary{
+    margin-left: 300px;
+}
+

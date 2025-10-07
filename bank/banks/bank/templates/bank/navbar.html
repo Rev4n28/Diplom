@@ -1,27 +1,9 @@
 {% load static %}
-<header class="header">
-    <div class="container">
-        <a href="/">
-            <img src="{% static 'images/logo_lock.svg' %}">
-        </a>
-    </div>
-    <nav>
-        <div class="container">
-            <a href="/">
-                Мои пароли
-            </a>
-        </div>
-        <div class="container">
-            <a href="/">
-                Добавить пароль
-            </a>
-        </div>
-        <div class="container">
-            <a href="/">
-                Выйти из аккаунта
-            </a>
-        </div>
-    </nav>
-
-</header>
+<nav class="navbar bg-body-tertiary">
+  <form class="container-fluid justify-content-start">
+    <a href="{% url 'bank' %}"><button class="btn btn-outline-success me-2" type="button">ГЛАВНАЯ</button></a>
+    <a href="{% url 'add-key' %}"><button class="btn btn-sm btn-outline-secondary" type="button">ДОБАВИТЬ КЛЮЧ</button></a>
+    <button class="btn btn-sm btn-outline-secondary" type="button">РЕГИСТРАЦИЯ</button>
+  </form>
+</nav>
 
