@@ -1,0 +1,159 @@
+{% extends 'bank/base.html' %}
+
+{% block content %}
+
+{% if page == 'register' %}
+
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-5">
+
+                            <h2 class="fw-bold mb-2 text-uppercase">Регистриация</h2>
+                            <p class="text-white-50 mb-5">Укажите свои данные для регистрации!</p>
+                            <form action="{% url 'register' %}" method="post">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    {{ field }}
+                                    <label class="form-label" for="typeEmailX">{{ field.label }}</label>
+                                </div>
+                                {% endfor %}
+
+
+
+                                <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Забыли пароль?</a>
+                                </p>
+
+                                <button data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-outline-light btn-lg px-5" type="submit">Login
+                                </button>
+                            </form>
+                        </div>
+
+                        <div>
+                            <p class="mb-0">Уже есть аккаунт?<a href="{% url 'login' %}" class="text-white-50 fw-bold">Авторизуйтесь</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--<section class="vh-100 bg-image">-->
+<!--    <div class="mask d-flex align-items-center h-100 gradient-custom-3">-->
+<!--        <div class="container h-100">-->
+<!--            <div class="row d-flex justify-content-center align-items-center h-100">-->
+<!--                <div class="col-12 col-md-9 col-lg-7 col-xl-6">-->
+<!--                    <div class="card" style="border-radius: 15px;">-->
+<!--                        <div class="card-body p-5">-->
+<!--                            <h2 class="text-uppercase text-center mb-5">Create an account</h2>-->
+
+<!--                            <form action="{% url 'register' %}" method="post">-->
+
+<!--                                <div data-mdb-input-init class="form-outline mb-4">-->
+<!--                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg"/>-->
+<!--                                    <label class="form-label" for="form3Example1cg">Your Name</label>-->
+<!--                                </div>-->
+
+<!--                                <div data-mdb-input-init class="form-outline mb-4">-->
+<!--                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg"/>-->
+<!--                                    <label class="form-label" for="form3Example3cg">Your Email</label>-->
+<!--                                </div>-->
+
+<!--                                <div data-mdb-input-init class="form-outline mb-4">-->
+<!--                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg"/>-->
+<!--                                    <label class="form-label" for="form3Example4cg">Password</label>-->
+<!--                                </div>-->
+
+<!--                                <div data-mdb-input-init class="form-outline mb-4">-->
+<!--                                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg"/>-->
+<!--                                    <label class="form-label" for="form3Example4cdg">Repeat your password</label>-->
+<!--                                </div>-->
+
+<!--                                <div class="form-check d-flex justify-content-center mb-5">-->
+<!--                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg"/>-->
+<!--                                    <label class="form-check-label" for="form2Example3g">-->
+<!--                                        I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>-->
+<!--                                    </label>-->
+<!--                                </div>-->
+
+<!--                                <div class="d-flex justify-content-center">-->
+<!--                                    <button type="button" data-mdb-button-init-->
+<!--                                            data-mdb-ripple-init-->
+<!--                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">-->
+<!--                                        Register-->
+<!--                                    </button>-->
+<!--                                </div>-->
+
+<!--                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a-->
+<!--                                        href="{% url 'login' %}"-->
+<!--                                        class="fw-bold text-body"><u>Login here</u></a></p>-->
+
+<!--                            </form>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+{% else %}
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-5">
+
+                            <h2 class="fw-bold mb-2 text-uppercase">Авторизация</h2>
+                            <p class="text-white-50 mb-5">Введите имя пользователя и пароль</p>
+                            <form action="{% url 'login' %}" method="post">
+                                {% csrf_token %}
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="text" id="typeEmailX" name="username" class="form-control form-control-lg"/>
+                                    <label class="form-label" for="typeEmailX">Имя пользователя</label>
+                                </div>
+
+                                <div data-mdb-input-init class="form-outline form-white mb-4">
+                                    <input type="password" name="password" id="typePasswordX" class="form-control form-control-lg"/>
+                                    <label class="form-label" for="typePasswordX">Пароль</label>
+                                </div>
+
+                                <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Забыли пароль?</a>
+                                </p>
+
+                                <button data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-outline-light btn-lg px-5" type="submit">Авторизация
+                                </button>
+                            </form>
+                        </div>
+
+                        <div>
+                            <p class="mb-0">У ввс нет аккаунта? <a href="{% url 'register' %}" class="text-white-50 fw-bold">Зарегистрируйтесь</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}
+
+{% endblock %}

@@ -50,6 +50,15 @@ img{
 }
 
 .btn-outline-secondary{
-    margin-left: 300px;
+    /* margin-left: 300px; */
 }
 
+.container-fluid{
+    justify-content: space-between !important;
+    
+}
+
+input{
+    color: black;
+    height: 50px;
+}

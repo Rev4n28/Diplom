@@ -21,8 +21,14 @@ from . import views
 urlpatterns = [
     path('', views.bank, name='bank'),
     path('add-key/', views.add_key, name='add-key'),
+
+    path('login/', views.login_user, name='login'),
+    path('logout/', views.logout_user, name='logout'),
+    path('register/', views.register_user, name='register'),
+
+
+
     path('change-key/', views.change_key, name='change-key'),
-    # path('register/', views.register_user, name='register'),
     # path('set-password/', views.set_password, name='set-password'),
     # path('view-password/', views.view_password, name='view-password'),
 ]
