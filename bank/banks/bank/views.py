@@ -6,22 +6,20 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm
-
-
-def bank(request):
-    psw = Password.objects.all()
-
-    context = {
-        'passwords': psw
-    }
-
-    return render(request, "bank/index.html", context)
+from .forms import CustomUserCreationForm, PasswordForm
 
 
 @login_required(login_url="login")
-def add_key(request):
-    return render(request, "bank/add_key.html")
+def bank(request):
+    prof = request.user.profile
+    passwords = prof.password_set.all()
+
+    context = {
+        'prof': prof,
+        'passwords': passwords,
+    }
+
+    return render(request, "bank/index.html", context)
 
 
 @login_required(login_url="login")
@@ -78,3 +76,16 @@ def register_user(request):
         'form': form,
     }
     return render(request, "bank/login_register.html", context)
+
+
+def add_key(request):
+    form = PasswordForm()
+
+    if request.method == "POST":
+        form = PasswordForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('bank')
+
+    context = {'form': form}
+    return render(request, 'bank/add_key.html', context)

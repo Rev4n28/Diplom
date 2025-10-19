@@ -58,7 +58,8 @@ img{
     
 }
 
-input{
+input, textarea{
+    /* width: 100%; */
     color: black;
     height: 50px;
 }

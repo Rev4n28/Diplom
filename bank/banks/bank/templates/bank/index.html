@@ -3,7 +3,7 @@
 {% block content %}
 
 
-{% if request.user.is_authenticated %}
+{% if passwords %}
 
 <div class="row">
     {% for password in passwords %}
@@ -21,9 +21,10 @@
 </div>
 {% else %}
 
-<h1>ВОЙДИТЕ ИЛИ ЗАРЕГИСТРИРУЙТЕСЬ, ЧТОБЫ ДОБАВИТЬ СВОИ КЛЮЧИ.</h1>
 
+<h1>ДОБАВЬТЕ СВОИ НОВЫЕ КЛЮЧИ.</h1>
 {% endif %}
+
 
 
 {% endblock %}
