@@ -14,7 +14,9 @@ class PasswordForm(ModelForm):
 
     class Meta:
         model = Password
-        fields = ['owner', 'title', 'password']
+        fields ='__all__'
+        exclude = ['owner']
+        labels = {'title': 'Название', 'password': 'Пароль'}
 
 
 class CustomUserCreationForm(UserCreationForm):

@@ -23,8 +23,38 @@ def bank(request):
 
 
 @login_required(login_url="login")
-def change_key(request):
-    return render(request, "bank/change_key.html")
+def change_key(request, pk):
+    profile = request.user.profile
+    password = profile.password_set.get(id=pk)
+    form = PasswordForm(instance=password)
+
+    if request.method == "POST":
+        form = PasswordForm(request.POST, instance=password)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Ваш ключ был обновлён")
+            return redirect('bank')
+
+    context = {
+        'form': form,
+        'password': password,
+    }
+    return render(request, "bank/change_key.html", context)
+
+@login_required(login_url="login")
+def delete_key(request, pk):
+    profile = request.user.profile
+    password = profile.password_set.get(id=pk)
+
+    if request.method == "POST":
+        password.delete()
+        messages.success(request, "Ваш ключ был удалён")
+        return redirect('bank')
+
+    context = {
+        'object': password,
+    }
+    return render(request, "bank/delete_key.html", context)
 
 
 def login_user(request):
@@ -78,6 +108,7 @@ def register_user(request):
     return render(request, "bank/login_register.html", context)
 
 
+@login_required(login_url="login")
 def add_key(request):
     form = PasswordForm()
 

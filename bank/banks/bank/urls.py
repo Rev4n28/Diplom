@@ -28,7 +28,8 @@ urlpatterns = [
 
 
     path('add-key/', views.add_key, name='add-key'),
-    path('change-key/', views.change_key, name='change-key'),
-    # path('set-password/', views.set_password, name='set-password'),
+    path('change-key/<str:pk>/', views.change_key, name='change-key'),
+    path('delete-key/<str:pk>/', views.delete_key, name='delete-key'),
+
     # path('view-password/', views.view_password, name='view-password'),
 ]
