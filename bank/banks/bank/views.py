@@ -41,6 +41,7 @@ def change_key(request, pk):
     }
     return render(request, "bank/change_key.html", context)
 
+
 @login_required(login_url="login")
 def delete_key(request, pk):
     profile = request.user.profile

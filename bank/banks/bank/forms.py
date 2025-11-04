@@ -14,7 +14,7 @@ class PasswordForm(ModelForm):
 
     class Meta:
         model = Password
-        fields ='__all__'
+        fields = '__all__'
         exclude = ['owner']
         labels = {'title': 'Название', 'password': 'Пароль'}
 
