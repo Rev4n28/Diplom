@@ -2,32 +2,27 @@
 
 {% block content %}
 
-<h1>{{ password.title }} ПАРОЛЬ</h1>
-
-
 <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card bg-dark text-white" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
 
                         <div class="mb-md-5 mt-md-4 pb-5">
 
-                            <h2 class="fw-bold mb-2 text-uppercase">Редактирование</h2>
-                            <p class="text-white-50 mb-5">Измените данные ключа {{ password.title }}!</p>
+                            <h2 class="fw-bold mb-2 text-uppercase">Просмотр/Редактирование</h2>
+                            <p class="text-white-50 mb-5">Просмотрите и при необходимости измените данные ключа {{ password.title }}!</p>
                             <form action="{% url 'change-key' password.id %}" method="post"
                                   enctype="multipart/form-data">
                                 {% csrf_token %}
                                 {{ form }}
-                                <input type="submit" value="Сохранить">
+                                <input type="submit" class="btn btn-sm btn-outline-secondary back btndelete simplebtn" value="Сохранить">
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 {% endblock %}

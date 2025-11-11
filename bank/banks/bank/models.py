@@ -13,7 +13,7 @@ class Profile(models.Model):
 
 
 class Password(models.Model):
-    owner = models.ForeignKey(Profile, on_delete=models.CASCADE, blank=True, default="123456")
+    owner = models.ForeignKey(Profile, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     password = models.TextField(max_length=200)
 

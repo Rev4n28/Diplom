@@ -2,20 +2,29 @@
     text-decoration: none;
     box-sizing: border-box;
     /* border: 1px solid black; */
+    background-color: #6c7074 !important;
 }
 
+.btn{
+    background-color: #FFF !important;
+    outline-color: transparent;
+}
 
 .header{
-    border: 1px solid #FFF;
+    /* border: 1px solid #FFF; */
     display: flex;
 }
 
-nav{
-    display: flex;
+.navbar{
+    background-color: #6c7074;
+}
+
+.body, .row{
+    background-color: #6c7074 !important;
 }
 
 .bg-body-tertiary{
-    background-color: black;
+    /* background-color: black; */
 }
 
 .container{
@@ -23,7 +32,7 @@ nav{
     /* padding: 20px; */
     justify-content: space-between;
     font-size: 30px;
-    border: 1px solid #FFF;
+    /* border: 1px solid #FFF; */
     width: 100px;
     height: 100px;
 }
@@ -33,11 +42,12 @@ nav{
 }
 
 a{
-    color: white;
+    /* color: white !important; */
     font-size: 20px;
     margin: 0px;
     display: block;
     border: 0px;
+    /* border: 1px solid white !important; */
 }
 
 img{
@@ -61,25 +71,95 @@ img{
     
 }
 
-input, textarea{
+input{
     /* width: 100%; */
     color: black;
     height: 50px;
+    background-color: #FFF !important;
 }
 
+textarea{
+    height: 75px;
+    color: black;
+    background-color: #FFF !important;
+}
+
+
 .card-body{
-    background-color: #FFF;
-    border: 10px solid black;
+    background-color: #6c7074;
+    /* border: 10px solid black; */
     
 }
 
-h2, p, label{
-    color: #000 !important;
+h2, p, label, h5{
+    color: #FFF !important;
+    text-align: center;
 }
+
 input, textarea, button{
-    border: 2px solid black !important;
+    /* border: 2px solid black !important; */
 }
 
 .text{
     color: #000;
+}
+
+.red:hover{
+    background-color: rgb(126, 21, 21) !important;
+}
+
+.delete{
+    width: 100px;
+    margin-top: 5px;
+}
+
+.btnkey{
+    width: 100% !important;
+}
+
+.btndelete{
+    width: 50% !important;
+    font-size: 30px !important;
+}
+
+.submit{
+    width: 50% !important;
+    height: 60px !important;
+}
+
+.simplebtn:hover{
+    background-color: #0d6efd !important;
+}
+
+.alert__message, .alert__close{
+    color: #FFF !important;
+}
+.alert{
+    color: var(--color-main) !important;
+}
+
+.form-control{
+    font-size: 20px !important;
+}
+
+.text{
+    color: #FFF;
+}
+
+.mainbtn:hover{
+    background-color: #198754 !important;
+}
+
+.col-12{
+    margin: auto;
+}
+
+.regbtn{
+    width: 60% !important;
+}
+
+@media (max-width: 560px) {
+    a{
+        font-size: 10px !important;
+    }
 }

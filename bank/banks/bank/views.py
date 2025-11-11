@@ -115,8 +115,11 @@ def add_key(request):
 
     if request.method == "POST":
         form = PasswordForm(request.POST)
+        print(request.user.id)
         if form.is_valid():
-            form.save()
+            user = form.save(commit=False)
+            user.owner = request.user.profile
+            user.save()
             return redirect('bank')
 
     context = {'form': form}
