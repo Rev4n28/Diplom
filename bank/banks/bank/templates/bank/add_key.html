@@ -8,8 +8,8 @@
             <div class="card bg-dark text-white" style="border-radius: 1rem;">
                 <div class="card-body p-5 text-center">
                     <div class="mb-md-5 mt-md-4 pb-5">
-                        <h2 class="fw-bold mb-2 text-uppercase">Добавление ключа</h2>
-                        <p class="text-white-50 mb-5">Укажите свои данные для ключа!</p>
+                        <h2 class="fw-bold mb-2 text-uppercase">Добавление заметки</h2>
+                        <p class="text-white-50 mb-5">Укажите свои данные для заметки!</p>
                         <form action="{% url 'add-key' %}" method="post">
                             {% csrf_token %}
                             {% for field in form %}

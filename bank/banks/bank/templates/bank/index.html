@@ -13,7 +13,7 @@
                 <h5 class="card-title">{{ password.title }}</h5>
                 <!--        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
                 <a href="{% url 'change-key' password.id %}" class="btn btn-primary btnkey simplebtn">ПРОСМОТР/РЕДАКТИРОВАНИЕ</a>
-                <a href="{% url 'delete-key' password.id %}" class="btn btn-primary btnkey red delete">УДАЛИТЬ КЛЮЧ</a>
+                <a href="{% url 'delete-key' password.id %}" class="btn btn-primary btnkey red delete">УДАЛИТЬ ЗАМЕТКУ</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
 {% else %}
 
 
-<h1>ДОБАВЬТЕ СВОИ НОВЫЕ КЛЮЧИ.</h1>
+<h1>ДОБАВЬТЕ СВОИ НОВЫЕ ЗАМЕТКИ.</h1>
 {% endif %}
 
 

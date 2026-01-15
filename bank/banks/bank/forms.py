@@ -16,7 +16,7 @@ class PasswordForm(ModelForm):
         model = Password
         fields = '__all__'
         exclude = ['owner']
-        labels = {'title': 'Название', 'password': 'Пароль'}
+        labels = {'title': 'Название', 'password': 'Данные'}
 
 
 class CustomUserCreationForm(UserCreationForm):

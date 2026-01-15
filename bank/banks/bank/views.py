@@ -32,7 +32,7 @@ def change_key(request, pk):
         form = PasswordForm(request.POST, instance=password)
         if form.is_valid():
             form.save()
-            messages.success(request, "Ваш ключ был обновлён")
+            messages.success(request, "Ваша заметка была обновлена")
             return redirect('bank')
 
     context = {
@@ -49,7 +49,7 @@ def delete_key(request, pk):
 
     if request.method == "POST":
         password.delete()
-        messages.success(request, "Ваш ключ был удалён")
+        messages.success(request, "Ваша заметка была удалена")
         return redirect('bank')
 
     context = {
