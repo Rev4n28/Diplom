@@ -12,12 +12,12 @@
                         <div class="mb-md-5 mt-md-4 pb-5">
 
                             <h2 class="fw-bold mb-2 text-uppercase">Удаление</h2>
-                            <p class="text-white-50 mb-5">Вы действительно хотите удалть заметку {{ object }}?</p>
+                            <p class="text-white-50 mb-5">Вы действительно хотите удалить заметку {{ object }}?</p>
                             <form class="row g-3 form" method="post">
                                 {% csrf_token %}
                                 <a class="btn btn-sm btn-outline-secondary back btndelete simplebtn" href="{% url 'bank' %}">Вернуться</a>
                                 <div class="col-auto">
-                                    <input type="submit" value="удалить" class="btn btn-primary mb-3 btndelete red">
+                                    <input type="submit" value="Удалить" class="btn btn-primary mb-3 btndelete red">
                                 </div>
                             </form>
                         </div>

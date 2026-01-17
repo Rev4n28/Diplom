@@ -163,3 +163,8 @@ input, textarea, button{
         font-size: 10px !important;
     }
 }
+
+.first_text{
+    color: #FFF !important;
+    text-align: center;
+}
